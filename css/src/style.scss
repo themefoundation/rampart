@@ -1,0 +1,632 @@
+/*
+Theme Name: Rampart
+Theme URI: http://themefoundation.com/
+Description: A WordPress theme for developers only.
+Author: Theme Foundation
+Author URI: http://themefoundation.com/
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags: editor-style, threaded-comments
+*/
+
+// =SASS Variables
+$font-size: 100%; // 16px
+$font-size-sm: 0.625rem; //10px
+$line-height: 1.375rem; // 22px
+$line-height-sm: 1em;
+$max-width: 1300px;
+$horizontal-padding: 25px;
+
+$border-color: #dddddd;
+$background-color: #ffffff;
+$background-hover-color: #f6f6f6;
+
+/* =Reset
+-------------------------------------------------------------- */
+html,
+body{
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+html,
+body,
+pre{
+	overflow: auto;
+}
+
+/* =Column Structure (mobile)
+-------------------------------------------------------------- */
+ 
+.wrap{
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+#main{
+	padding-top: $line-height * 2;
+	padding-bottom: $line-height * 2;
+}
+ 
+#primary{
+	max-width: 650px;
+	margin: 0 auto;
+	padding: 0 $horizontal-padding;
+}
+
+.content-full-width #primary{
+	max-width: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+#secondary,
+#tertiary{
+	max-width: 350px;
+	margin: 0 auto;
+	padding: 0 $horizontal-padding;
+}
+
+/* Clear floats */
+.wrap:after,
+.widget:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* =Typography
+-------------------------------------------------------------- */
+
+.wp-post-image{
+	display: block;
+}
+
+img{
+	margin-bottom: $line-height;
+}
+
+/* =Header (mobile)
+-------------------------------------------------------------- */
+
+.site-header .wrap{
+	padding: 0 $horizontal-padding;
+}
+
+.site-header .widget{
+	margin-bottom: 0;
+}
+
+#header .wrap{
+	padding: ($line-height * 2) $horizontal-padding;
+}
+
+.site-title{
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.site-title a{
+	font-size: 2rem; /* 32px */
+	line-height: $line-height * 2;
+	margin-bottom: $line-height;
+}
+
+.site-header a{
+	text-decoration: none;
+}
+
+.site-description{
+	text-align: center;
+}
+
+/* Sets font size to 0 to remove spaces between inline elements. */
+.site-header .menu{
+	font-size: 0;
+}
+
+/* Sets font size back to 1rem so link text is visible. */
+.site-header .menu a{
+	font-size: 1rem;
+}
+
+.site-header .menu a{
+	line-height: $line-height * 2;
+}
+
+.site-header .menu ul a{
+	background: #ffffff;
+}
+
+.site-header .widget-title{
+	display: block;
+	border: 0 solid;
+	font-size: 1rem;
+	margin-right: 0.5rem;
+}
+
+.site-header .textwidget{
+	margin-right: 0.5rem;
+}
+
+.site-header .widget_text{
+	text-align: center;
+}
+
+.site-header .widget_text *{
+	display: inline;
+	margin-bottom: 0;
+}
+
+.site-header .widget_search{
+	margin: 0 auto;
+	display: block;
+	width: 300px;
+}
+
+.site-header .widget_search input{
+	border: 1px solid $border-color;	
+	margin-top: -1px;
+	margin-bottom: 0;
+	height: 45px;
+	display: block;
+	float: left;
+}
+
+.site-header .widget_search input[type="submit"]{
+	border-left: 0 solid;
+}
+
+/* =Main (mobile)
+-------------------------------------------------------------- */
+
+.entry-meta{
+	margin-bottom: $line-height;
+}
+
+.archive-navigation{
+	clear: both;
+	margin-bottom: $line-height;
+}
+
+.archive-navigation a{
+	line-height: $line-height * 2;
+	display: block;
+	padding: 0 $horizontal-padding;
+	text-decoration: none;
+}
+
+.archive-navigation .previous-posts a{
+	float: left;
+}
+
+.archive-navigation .next-posts a{
+	float: right;
+}
+
+/* =Footer (mobile)
+-------------------------------------------------------------- */
+
+.site-footer .wrap{
+	padding: $line-height $horizontal-padding; /* 22px 25px */
+}
+
+/* =Widgets (mobile)
+-------------------------------------------------------------- */
+
+.widget{
+	margin-bottom: $line-height;
+}
+
+.widget ol,
+.widget ul{
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.widget li{
+	margin: 0 0 $line-height 0; /* 0 0 22px */
+}
+
+.widget li li{
+	margin: $line-height 0 0 1rem; /* 22px 0 0 16px */
+}
+
+.widget_search input[type="text"]{
+		float: left;
+		width: 70%;
+}
+
+.widget_search input[type="submit"]{
+		float: left;
+		width: 30%;
+}
+
+.widget_calendar table{
+	width: 100%;
+}
+
+.widget_calendar td{
+	text-align: center;
+}
+
+.widget_calendar td#prev{
+	text-align: left;
+}
+
+.widget_calendar td#next{
+	text-align: right;
+}
+
+
+/* =Forms (mobile)
+-------------------------------------------------------------- */
+
+input{
+	height: $line-height * 2;
+	padding: 0 0.5rem;
+}
+
+/* =WordPress classes
+-------------------------------------------------------------- */
+
+.wp-caption {
+	max-width: 100%;
+	height: auto;
+}
+
+.wp-caption {
+	text-align: center;
+	padding: 5px;
+	border: 1px solid $border-color;
+	margin-bottom: $line-height;
+}
+
+.wp-caption img{
+	margin-bottom: 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+
+.alignright {
+	float: right;
+	margin-left: 1rem;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1rem;
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+/* =Widgetize columns
+-------------------------------------------------------------- */
+ 
+.widgetize:after{
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+ 
+.widgetize .widget{
+    float: left;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ 
+.widgetize-count-1 > .widget{
+    width: 100%;
+}
+ 
+.widgetize-count-2 > .widget{
+    width: 50%;
+}
+ 
+.widgetize-count-3 > .widget{
+    width: 33.333333333%;
+}
+ 
+.widgetize-count-4 > .widget{
+    width: 25%;
+}
+ 
+.widgetize-count-5 > .widget{
+    width: 20%;
+}
+ 
+.widgetize-count-6 > .widget{
+    width: 16.666666667%;
+}
+
+
+/* =Tablet
+-------------------------------------------------------------- */
+@media screen and (min-width : 900px) {
+
+	/* =Structure (tablet)
+	-------------------------------------------------------------- */
+
+	#main .wrap{
+		max-width: 1000px;
+	}
+
+	#primary{
+		width: 65%;
+	}
+
+	#secondary,
+	#tertiary{
+		width: 35%;
+	}
+
+	/* content layout */
+	.content-only #main #primary{
+		width: 100%;
+		float: none;
+	}
+
+	/* content-sidebar layout */
+	.content-sidebar #primary{
+		float: left;
+	}
+
+	.content-sidebar #secondary{
+		float: right;
+	}
+
+	/* sidebar-content layout */
+	.sidebar-content #primary{
+		float: right;
+	}
+ 
+	.sidebar-content #secondary{
+		float: left;
+	}
+
+	/* content-sidebar-sidebar layout */
+	.content-sidebar-sidebar #primary{
+		float: left;
+	}
+
+	.content-sidebar-sidebar #secondary,
+	.content-sidebar-sidebar #tertiary{
+		float: right;
+		clear: right;
+	}
+
+	/* sidebar-sidebar-content layout */
+	.sidebar-sidebar-content #primary{
+		float: right;
+	}
+
+	.sidebar-sidebar-content #secondary,
+	.sidebar-sidebar-content #tertiary{
+		float: left;
+		clear: left;
+	}
+
+	/* sidebar-content-sidebar layout */
+	.sidebar-content-sidebar #primary{
+		float: left;
+	}
+
+	.sidebar-content-sidebar #secondary,
+	.sidebar-content-sidebar #tertiary{
+		float: right;
+		clear: right;
+	}
+
+	/* =Header (tablet)
+	-------------------------------------------------------------- */
+
+	.header-before .menu a,
+	.header-after .menu a{
+		border: 1px solid $border-color;
+		border-right: 0 solid;
+		line-height: 2.6875rem;
+	}
+
+	.header-before .menu > li > a,
+	.header-after .menu > li > a{
+		margin-top: -1px;
+	}
+
+	.header-before .menu > li:last-child a,
+	.header-after .menu > li:last-child a{
+		border-right: 1px solid $border-color;
+	}
+
+	.site-header .widget{
+		float: none;
+	}
+
+	.site-header .menu ul ul a{
+		margin-left: -1px;
+	}
+
+}
+
+
+/* =Desktop
+-------------------------------------------------------------- */
+@media screen and (min-width : 1140px) {
+
+	/* =Structure (desktop)
+	-------------------------------------------------------------- */
+
+	/* content-sidebar-sidebar layout */
+	.content-sidebar-sidebar #main .wrap{
+		max-width: $max-width;
+	}
+
+	.content-sidebar-sidebar #primary{
+		float: left;
+		width: 50%;
+	}
+
+	.content-sidebar-sidebar #secondary,
+	.content-sidebar-sidebar #tertiary{
+		float: left;
+		width: 25%;
+		clear: none;
+	}
+
+	/* sidebar-sidebar-content layout */
+	.sidebar-sidebar-content #main .wrap{
+		max-width: $max-width;
+	}
+
+	.sidebar-sidebar-content #primary{
+		float: right;
+		width: 50%;
+	}
+
+	.sidebar-sidebar-content #secondary,
+	.sidebar-sidebar-content #tertiary{
+		float: left;
+		width: 25%;
+		clear: none;
+	}
+
+	/* sidebar-content-sidebar layout */
+	.sidebar-content-sidebar #main .wrap{
+		max-width: $max-width;
+	}
+
+	.sidebar-content-sidebar #primary{
+		float: left;
+		margin-left: 25%;
+		width: 50%;
+	}
+
+	.sidebar-content-sidebar #secondary{
+		float: left;
+		margin: 0 0 0 -75%;
+		clear: none;
+		width: 25%;
+	}
+
+	.sidebar-content-sidebar #tertiary{
+		float: right;
+		clear: none;
+		width: 25%;
+	}
+
+	/* =Header (desktop)
+	-------------------------------------------------------------- */
+
+	.site-title{
+		float: left;
+	}
+
+	.site-title a{
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.site-description{
+		float: left;
+		line-height: $line-height * 2;
+		margin-left: $horizontal-padding;
+	}
+
+	#logo{
+		float: left;
+		margin-right: $horizontal-padding;
+	}
+
+	.site-header p{
+		margin-bottom: 0;
+	}
+
+	.site-header .widget{
+		float: left;
+	}
+
+	.site-header .widget_search{
+		float: right;
+	}
+
+	.site-header .menu:after{
+		visibility: hidden;
+		display: block;
+		content: "";
+		clear: both;
+		height: 0;
+	}
+
+	#header .menu{
+		float: right;
+	}
+
+	.site-header .menu > li {
+		display: block;
+		float: left;
+	}
+}
+
+
+
+/* =Accessibility
+-------------------------------------------------------------- */
+
+.skip-link {
+	position: absolute;
+	top:-100px;
+
+	/* Styled to match the default WordPress screen reader text */
+	background-color: #f1f1f1;
+	-webkit-box-shadow:0 0 2px 2px rgba(0,0,0,.6);
+	box-shadow:0 0 2px 2px rgba(0,0,0,.6);
+	color: #21759b;
+	display: block;
+	font-family: "Open Sans",sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	height: auto;
+	left:6px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+
+	-webkit-transition: top 1s ease-out;
+	transition: top 1s ease-out;
+}
+
+.skip-link:focus {
+	color: #21759b;
+	top: 7px;
+
+	-webkit-transition: top 0s;
+	transition: top 0s;
+}
+

@@ -1,0 +1,48 @@
+// =SASS Variables
+$font-size: 100%; // 16px
+$font-size-sm: 0.625rem; //10px
+$line-height: 1.375rem; // 22px
+$line-height-sm: 1em;
+$max-width: 1300px;
+$horizontal-padding: 25px;
+
+$border-color: #dddddd;
+$background-color: #ffffff;
+$background-hover-color: #f6f6f6;
+
+.tax-portfolio #primary,
+.single-portfolio_item #primary{
+	max-width: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+.tax-portfolio #primary{
+	padding-right: $horizontal-padding / 2;
+	padding-left: $horizontal-padding / 2;
+}
+
+.attachment-custom-content-portfolio-single{
+	margin: 0 auto $line-height * 2;
+}
+
+.single-portfolio_item .entry-title,
+.single-portfolio_item .entry-content,
+.single-portfolio_item .entry-meta{
+	max-width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 $horizontal-padding;
+}
+
+.tax-portfolio .portfolio_item{
+	width: 25%;
+	float: left;
+	padding-right: $horizontal-padding / 2;
+	padding-left: $horizontal-padding / 2;
+}
+
+.tax-portfolio .archive-navigation{
+	margin-right: $horizontal-padding / 2;
+	margin-left: $horizontal-padding / 2;
+}

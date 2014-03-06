@@ -1,0 +1,48 @@
+/* =Appearance
+-------------------------------------------------------------- */
+.site-header .menu ul, .site-header .menu.is-mobile-menu {
+  border-top: 1px solid #dddddd;
+  margin-top: -1px !important; }
+
+.site-header .is-mobile-menu a, .site-header .menu ul a {
+  border: 1px solid #dddddd;
+  border-top: 0 solid;
+  background: #ffffff; }
+
+.site-header .menu a:hover {
+  background: #eeeeee; }
+
+#header .menu > li > a:hover {
+  background: #ffffff; }
+
+.site-header .menu.is-mobile-menu.menu-arrows ul {
+  background: #eeeeee;
+  padding-left: 10px; }
+
+.site-header .menu ul a, .site-header .menu.is-mobile-menu a {
+  line-height: 2.6875rem;
+  /* 43px */ }
+
+.menu-toggle-button {
+  line-height: 2.75rem; }
+
+.site-header, #main {
+  border-top: 1px solid #dddddd;
+  margin-top: -1px; }
+
+.widget-title {
+  border-bottom: 1px solid #dddddd;
+  margin-top: -1px; }
+
+.entry-meta-bottom {
+  border-top: 1px solid #dddddd;
+  margin-top: -1px;
+  padding: 0.6875rem 0; }
+
+.archive-navigation a {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  margin-top: -1px; }
+
+.archive-navigation a:hover {
+  background: #eeeeee; }

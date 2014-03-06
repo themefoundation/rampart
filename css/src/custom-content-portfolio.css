@@ -1,0 +1,27 @@
+.tax-portfolio #primary, .single-portfolio_item #primary {
+  max-width: 100%;
+  width: 100%;
+  margin: 0; }
+
+.tax-portfolio #primary {
+  padding-right: 12.5px;
+  padding-left: 12.5px; }
+
+.attachment-custom-content-portfolio-single {
+  margin: 0 auto 2.75rem; }
+
+.single-portfolio_item .entry-title, .single-portfolio_item .entry-content, .single-portfolio_item .entry-meta {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 25px; }
+
+.tax-portfolio .portfolio_item {
+  width: 25%;
+  float: left;
+  padding-right: 12.5px;
+  padding-left: 12.5px; }
+
+.tax-portfolio .archive-navigation {
+  margin-right: 12.5px;
+  margin-left: 12.5px; }

@@ -1,0 +1,30 @@
+
+#widget-buttons{
+	padding-bottom: 1em;
+	overflow: hidden;
+	text-align: center;
+}
+
+#widgetize #the-list .submit{
+	float: none;
+	padding: 0.5em 0.4em;
+}
+
+#widgetize td,
+#widgetize th{
+	padding: 0.75em 1.5em;
+	text-align: left;
+}
+
+#widgetize .widgetize-is-hidden{
+	visibility: hidden;
+}
+
+#widgetize .no-items{
+	display: none;
+}
+
+#widgetize .inside{
+	padding: 1em;
+}
+
