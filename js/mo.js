@@ -8,7 +8,8 @@
 			breakpointType: 'screen', // 'screen' or 'element'
 			mobileMenuLocation: '',
 			toggleContainerID: 'menu-toggle-container',
-			toggleButtonID: 'menu-toggle-button',
+			toggleButtonID: '',
+			toggleButtonContent: '&#8801',
 			arrowClass: 'menu-arrows',
 			jsClass: 'is-js-menu',
 			mobileClass: 'is-mobile-menu',
@@ -19,12 +20,15 @@
 		},
 
 		init: function( el, options ) {
+			mojsMenuId++;
 			var menu = this,
 				doCallback = true, // Window resize throttle flag.
 				mo;
 
-			menu.el = $(el);
+			menu.number = mojsMenuId;
+			menu.el = $(el).addClass('mojs-' + menu.number);
 			menu.isTouch = false;
+
 			mo = menu.options = $.extend( {}, menu.options, options );
 
 			// Check for device touch support.
@@ -41,7 +45,7 @@
 			// Initialize the toggle button.
 			menu.initToggleButton();
 
-			// Initialize the arrows.
+			// Initialize the submenu arrows.
 			menu.el.addClass(mo.arrowClass)
 				.find('ul').parent().addClass(mo.hasSubmenuClass)
 				.children('a').append('<span class="' + mo.toggleSubmenuClass + '"></span>');
@@ -71,6 +75,13 @@
 					}
 				}
 			});
+
+			menu.el.find('li > a').focus(function(){
+				var mo = menu.options;
+				$('.thmfdn-menu-container').find('.'+mo.hasSubmenuClass ).removeClass( mo.openSubmenuClass );
+				$(this).parents('.'+mo.hasSubmenuClass ).addClass( mo.openSubmenuClass );
+			});
+
 
 			// Initialize the mobile menu.
 			menu.toggleMobile();
@@ -115,19 +126,25 @@
 			var menu = this,
 				mo = menu.options;
 
-			// Select the toggle button.
-			menu.toggleButton = $('#' + mo.toggleButtonID );
+			if ( $('#' + mo.toggleButtonID).length > 0 ) {
+				menu.toggleButton = $('#' + mo.toggleButtonID);
+				menu.toggleButton.addClass('mojs-toggle-' + mojsMenuId);
+			} else {
+				// Select the toggle button for current menu.
+				menu.toggleButton = $('.mojs-toggle-' + mojsMenuId);
 
-			// Automatically insert a toggle button if one doesn't exist.
-			if ( menu.toggleButton.length < 1 ) {
-				if ( '' === mo.mobileMenuLocation ) {
-					menu.toggleButton = menu.container.prepend('<div id="' + mo.toggleContainerID + '"><span id="' + mo.toggleButtonID + '" class="menu-toggle-button">&#8801</span></div>').find('#' + mo.toggleButtonID).hide();
-				} else {
-					if ( ! $(mo.mobileMenuLocation).hasClass( 'has-mobileMenu' ) ) {
-						menu.toggleButton = $(mo.mobileMenuLocation).prepend('<div id="' + mo.toggleContainerID + '"><span id="' + mo.toggleButtonID + '" class="menu-toggle-button">&#8801</span></div>').find('#' + mo.toggleButtonID).hide();					
-						$(mo.mobileMenuLocation).addClass( 'has-mobileMenu' );
+				// Automatically insert a toggle button if previously selected button doesn't exist.
+				if ( menu.toggleButton.length < 1 ) {
+					if ( '' === mo.mobileMenuLocation ) {
+						$('<div><span class="menu-toggle-button mojs-toggle-' + mojsMenuId + '">' + mo.toggleButtonContent + '</span></div>').prependTo(menu.container);
+					} else {
+						$('<div><span class="menu-toggle-button mojs-toggle-' + mojsMenuId + '">' + mo.toggleButtonContent + '</span></div>').prependTo(mo.mobileMenuLocation);
 					}
-				}
+					menu.toggleButton = $('.mojs-toggle-' + mojsMenuId).hide();
+					if ( mo.toggleButtonID ) {
+						menu.toggleButton.attr('id', mo.toggleButtonID);						
+					}
+				}	
 			}
 
 			// Add listener to the menu toggle button.
@@ -152,7 +169,6 @@
 				width = this.container.outerWidth();
 			}
 
-
 			// Check if viewport width is less than the mobile breakpoint setting and the mobile menu is not displayed yet.
 			if ( width < mo.mobileBreakpoint && !this.el.hasClass(mo.mobileClass) ) {
 				// Show the menu toggle button.
@@ -164,13 +180,14 @@
 				// Moves the menus to the specified location.
 				if ( '' !== mo.mobileMenuLocation ) {
 
-					if(!this.el.parent().hasClass('mojs-placeholder')) {
-						this.el.addClass('mojs-' + mojsMenuId).parent().addClass('mojs-' + mojsMenuId + '-placeholder mojs-placeholder');
-						mojsMenuId++;
+					if ( !this.el.parent().hasClass('mojs-placeholder') ) {
+						for (var i=mojsMenuId;i>0;i--) {
+							if(this.el.hasClass('mojs-' + i)) {
+								this.el.parent().addClass('mojs-' + i + '-placeholder mojs-placeholder');
+							}
+						}
 					}
-
-					$('#' + mo.toggleContainerID).append(this.el);
-
+					$(this.toggleButton).parent().append(this.el);
 				}
 
 			}
@@ -182,13 +199,11 @@
 
 				// Moves the menus back to the original location.
 				if ( '' !== mo.mobileMenuLocation ) {
-
 					for (var i=mojsMenuId;i>=0;i--) {
 						if(this.el.hasClass('mojs-' + i)) {
 							this.el.appendTo('.mojs-' + i + '-placeholder');
 						}
 					}
-
 				}
 
 				// Remove hide mobile class to ensure menu is never hidden in desktop view.
@@ -215,8 +230,13 @@
 			var mo = this.options,
 				submenu = $(menuItem).closest('.' + mo.hasSubmenuClass);
 
-			// Toggle the submenu open class and remove from any other submenus at the same level.
-			submenu.toggleClass(mo.openSubmenuClass).parent().find('.' + mo.openSubmenuClass).not(submenu).removeClass(mo.openSubmenuClass);
+			// Toggle the submenu open class.
+			submenu.toggleClass(mo.openSubmenuClass);
+
+			// Remove submenu open class from other open submenus.
+			if ( !this.el.hasClass( mo.mobileClass ) ) {
+				submenu.parent().find('.' + mo.openSubmenuClass).not(submenu).removeClass(mo.openSubmenuClass);
+			}
 		}
 	};
 
