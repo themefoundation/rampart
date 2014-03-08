@@ -123,17 +123,6 @@ img {
   display: block;
   width: 300px; }
 
-.site-header .widget_search input {
-  border: 1px solid #dddddd;
-  margin-top: -1px;
-  margin-bottom: 0;
-  height: 45px;
-  display: block;
-  float: left; }
-
-.site-header .widget_search input[type="submit"] {
-  border-left: 0 solid; }
-
 /* =Main (mobile)
 -------------------------------------------------------------- */
 .entry-meta {
@@ -179,12 +168,17 @@ img {
   margin: 1.375rem 0 0 1rem;
   /* 22px 0 0 16px */ }
 
-.widget_search input[type="text"] {
+.widget_search input {
+  border: 1px solid #dddddd;
+  margin-top: -1px;
+  margin-bottom: 0;
+  height: 2.8125rem;
+  display: block;
   float: left;
   width: 70%; }
 
 .widget_search input[type="submit"] {
-  float: left;
+  border-left: 0 solid;
   width: 30%; }
 
 .widget_calendar table {

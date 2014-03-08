@@ -170,19 +170,6 @@ img{
 	width: 300px;
 }
 
-.site-header .widget_search input{
-	border: 1px solid $border-color;	
-	margin-top: -1px;
-	margin-bottom: 0;
-	height: 45px;
-	display: block;
-	float: left;
-}
-
-.site-header .widget_search input[type="submit"]{
-	border-left: 0 solid;
-}
-
 /* =Main (mobile)
 -------------------------------------------------------------- */
 
@@ -239,14 +226,19 @@ img{
 	margin: $line-height 0 0 1rem; /* 22px 0 0 16px */
 }
 
-.widget_search input[type="text"]{
-		float: left;
-		width: 70%;
+.widget_search input{
+	border: 1px solid $border-color;
+	margin-top: -1px;
+	margin-bottom: 0;
+	height: $line-height * 2.045454545;
+	display: block;
+	float: left;
+	width: 70%;
 }
 
 .widget_search input[type="submit"]{
-		float: left;
-		width: 30%;
+	border-left: 0 solid;
+	width: 30%;
 }
 
 .widget_calendar table{
