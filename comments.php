@@ -35,7 +35,9 @@ if ( post_password_required() ) {
 			<?php echo wp_list_comments(); ?>
 		</ol><!-- .comment-list -->
 
-		<?php paginate_comments_links(); ?>
+		<div class="comment-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+			<?php paginate_comments_links(); ?>
+		</div>
 
 	<?php } ?>
 

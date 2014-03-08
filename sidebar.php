@@ -10,7 +10,7 @@
 <?php if ( is_active_sidebar( 'sidebar-1' ) ) { ?>
 
 	<?php do_action( 'sidebars_before' ); ?>
-	<div id="secondary" class="sidebar" role="complementary">
+	<div id="secondary" class="sidebar" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
 		<?php do_action( 'sidebar_top' ); ?>
 
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
@@ -22,7 +22,7 @@
 
 <?php if ( is_active_sidebar( 'sidebar-2' ) ) { ?>
 
-	<div id="tertiary" class="sidebar" role="complementary">
+	<div id="tertiary" class="sidebar" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
 		<?php do_action( 'sidebar_top' ); ?>
 
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>

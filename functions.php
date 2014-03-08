@@ -198,3 +198,18 @@ function thmfdn_page_template_layout_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'thmfdn_page_template_layout_class' );
+
+/**
+* Removes "hentry" class output from pages
+ *
+ * @return array
+ * @since 1.0
+ */
+function thmfdn_limit_hentry( $class ) {
+	if( is_page() ) {
+		$class = array_diff( $class, array( 'hentry' ) );	
+	}
+
+	return $class;
+}
+add_filter( 'post_class', 'thmfdn_limit_hentry' );

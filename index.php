@@ -12,21 +12,21 @@
 <div id="primary">
 	<?php do_action( 'content_before' ); ?>
 
-	<div id="content" class="hfeed" role="main">
+	<div id="content" class="hfeed" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
 		<?php do_action( 'content_top' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 					<?php if ( has_post_thumbnail() ) { ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a>
 					<?php } ?>
 					<h2 class="entry-title">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" itemprop="headline"><?php the_title(); ?></a>
 					</h2>
 					
-					<div class="entry-content">
+					<div class="entry-content" itemprop="text">
 						<?php the_content(); ?>
 					</div><!--.entry-content-->
 				</div>

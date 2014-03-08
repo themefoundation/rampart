@@ -7,7 +7,7 @@
  */
 
 $args = array(
-	'before' => '<div class="single-navigation">',
+	'before' => '<div class="single-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement>',
 	'after' => '</div>'
 );
 

@@ -11,7 +11,7 @@
 		</div><!--#main-->
 
 		<?php do_action( 'footer_before' ); ?>
-			<div id="footer" class="site-footer">
+			<div id="footer" class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
 				<div class="wrap">
 					<?php do_action( 'footer_top' ); ?>
 

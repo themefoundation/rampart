@@ -12,18 +12,18 @@
 <div id="primary">
 	<?php do_action( 'content_before' ); ?>
 
-	<div id="content" role="main">
+	<div id="content" role="main" itemprop="mainContentOfPage">
 		<?php do_action( 'content_top' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1 class="entry-title">
+					<h1 class="entry-title" itemprop="headline">
 						<?php the_title(); ?>
 					</h1>
 					
-					<div class="entry-content">
+					<div class="entry-content" itemprop="text">
 						<?php the_content(); ?>
 					</div><!--.entry-content-->
 				</div>

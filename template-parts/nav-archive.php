@@ -10,7 +10,7 @@ $previous_posts_link = get_previous_posts_link();
 $next_posts_link = get_next_posts_link();
 
 if( !empty( $previous_posts_link ) || !empty( $next_posts_link ) ) {
-	echo '<div class="archive-navigation">';
+	echo '<div class="archive-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement>';
 	if( !empty( $previous_posts_link ) ) {
 		echo '<span class="previous-posts">';
 		previous_posts_link( 'Previous' );

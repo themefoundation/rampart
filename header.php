@@ -19,22 +19,22 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 	<a class="skip-link" href="#content"><?php _e( 'Skip to main content', 'rampart' ); ?></a>
 	<div id="page">
 
 		<?php do_action( 'header_before' ); ?>
-		<div id="header" class="site-header">
+		<div id="header" class="site-header" itemscope itemtype="http://schema.org/WPHeader">
 			<div class="wrap">
 				<?php do_action( 'header_top' ); ?>
 
 				<div id="branding" role="banner">
-					<?php echo apply_filters( 'site_name', '<p class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo('name') . '</a></p>' ); ?>
-					<?php echo apply_filters( 'site_description', '<p class="site-description">' . get_bloginfo( 'description' ) . '</p>' ); ?>
+					<?php echo apply_filters( 'site_name', '<p class="site-title" itemprop="headline"><a href="' . esc_url( home_url( '/' ) ) . '">' . get_bloginfo('name') . '</a></p>' ); ?>
+					<?php echo apply_filters( 'site_description', '<p class="site-description" itemprop="description">' . get_bloginfo( 'description' ) . '</p>' ); ?>
 				</div><!--#branding-->
 
 				<?php if( has_nav_menu( 'header-menu' ) ) { ?>
-					<div role="navigation">
+					<div role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'header-menu',
