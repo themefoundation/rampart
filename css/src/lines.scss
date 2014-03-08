@@ -70,6 +70,7 @@ $background-hover-color: #eeeeee;
 	background: $background-color;
 	border: 1px solid $border-color;
 	margin-top: -1px;
+	height: $line-height * 2.045454545;
 }
 
 .archive-navigation a:hover{

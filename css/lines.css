@@ -45,7 +45,9 @@
 .archive-navigation a {
   background: #ffffff;
   border: 1px solid #dddddd;
-  margin-top: -1px; }
+  margin-top: -1px;
+  height: 45px;
+  height: 2.8125rem; }
 
 .archive-navigation a:hover {
   background: #eeeeee; }
