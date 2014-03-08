@@ -42,13 +42,16 @@
   padding: 11px 0;
   padding: 0.6875rem 0; }
 
-.archive-navigation a {
+.archive-navigation a, .comment-navigation a, .comment-navigation span {
   background: #ffffff;
   border: 1px solid #dddddd;
   margin-top: -1px;
   height: 45px;
   height: 2.8125rem; }
 
-.archive-navigation a:hover {
+.archive-navigation a:hover, .comment-navigation a:hover {
   background: #eeeeee; }
+
+.comment-navigation a, .comment-navigation span {
+  margin-right: 12.5px; }
 

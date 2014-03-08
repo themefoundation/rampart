@@ -66,13 +66,21 @@ $background-hover-color: #eeeeee;
 	padding: ($line-height / 2) 0;
 }
 
-.archive-navigation a{
+.archive-navigation a,
+.comment-navigation a,
+.comment-navigation span{
 	background: $background-color;
 	border: 1px solid $border-color;
 	margin-top: -1px;
 	height: $line-height * 2.045454545;
 }
 
-.archive-navigation a:hover{
+.archive-navigation a:hover,
+.comment-navigation a:hover{
 	background: $background-hover-color;
+}
+
+.comment-navigation a,
+.comment-navigation span{
+	margin-right: $horizontal-padding / 2;
 }

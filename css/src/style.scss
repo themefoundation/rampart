@@ -75,7 +75,9 @@ pre{
 
 /* Clear floats */
 .wrap:after,
-.widget:after{
+.widget:after,
+.archive-navigation:after,
+.comment-navigation:after{
 	content: "";
 	display: table;
 	clear: both;
@@ -89,7 +91,7 @@ pre{
 }
 
 img{
-	margin-bottom: $line-height;
+	// margin-bottom: $line-height;
 }
 
 /* =Header (mobile)
@@ -357,6 +359,25 @@ input{
     width: 16.666666667%;
 }
 
+/* =Comments
+-------------------------------------------------------------- */
+.comment-author .avatar{
+	display:none;
+}
+
+.comment-navigation{
+	clear: both;
+	margin-bottom: $line-height;
+}
+
+.comment-navigation a,
+.comment-navigation span{
+	line-height: $line-height * 2;
+	display: block;
+	padding: 0 $horizontal-padding / 2;
+	text-decoration: none;
+	float: left;
+}
 
 /* =Tablet
 -------------------------------------------------------------- */
