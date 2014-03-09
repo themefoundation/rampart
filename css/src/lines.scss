@@ -82,5 +82,34 @@ $background-hover-color: #eeeeee;
 
 .comment-navigation a,
 .comment-navigation span{
-	margin-right: $horizontal-padding / 2;
+	margin-right: $line-height / 2;
 }
+
+.comment-list,
+.comment-list .children{
+	border: 1px solid $border-color;
+	margin-top: -1px;
+	padding-right: 0;
+	padding-bottom: $line-height * 0.454545455;
+}
+
+.comment-list .children{
+	border-right: 0 solid;
+}
+
+#comment{
+	border: 1px solid $border-color;
+	margin-top: -1px;
+	height: ($line-height * 4) + ( $line-height * 2.0454545455 );
+}
+
+// ol.comment-list > li > ul.children > li{
+// 	border-right: 1px solid #ddd;
+// }
+
+// ol.comment-list .even {
+//   background-color: #ddd;
+// }
+// ol.comment-list .odd {
+//   background-color: #eee;
+// }

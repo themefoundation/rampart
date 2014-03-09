@@ -365,9 +365,23 @@ input{
 	display:none;
 }
 
+.comment-list,
+.comment-list .children{
+	margin: 0;
+	padding: $line-height / 2;
+	list-style-type:none;
+}
+
+.comment-list{
+	margin: 0 0 $line-height;
+}
+
+.comment-list .comment-body{
+	padding-bottom: $line-height;
+}
+
 .comment-navigation{
 	clear: both;
-	margin-bottom: $line-height;
 }
 
 .comment-navigation a,
@@ -377,7 +391,14 @@ input{
 	padding: 0 $horizontal-padding / 2;
 	text-decoration: none;
 	float: left;
+	margin-bottom: $line-height;
 }
+
+#comment{
+	width: 100%;
+}
+
+
 
 /* =Tablet
 -------------------------------------------------------------- */
@@ -482,6 +503,12 @@ input{
 
 	.site-header .menu ul ul a{
 		margin-left: -1px;
+	}
+
+	/* =Comments (tablet)
+	-------------------------------------------------------------- */
+	.comment-list .comment-body{
+		padding: $line-height / 2;
 	}
 
 }
